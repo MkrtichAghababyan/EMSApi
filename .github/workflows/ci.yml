@@ -1,0 +1,32 @@
+name: EMS CI (.NET 9 Preview)
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install .NET 9 Preview
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.0.300'
+
+    - name: Show .NET info (optional)
+      run: dotnet --info
+
+    - name: Restore dependencies
+      run: dotnet restore EMSApi.sln
+
+    - name: Build
+      run: dotnet build EMSApi.sln --no-restore --configuration Release
+
+    - name: Test
+      run: dotnet test EMSApi.Tests/EMSApi.Tests.csproj --no-build --verbosity normal

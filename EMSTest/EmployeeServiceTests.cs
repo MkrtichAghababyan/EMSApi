@@ -105,6 +105,7 @@ namespace EMSApi.Tests
         public void Cleanup()
         {
             _context.Database.EnsureDeleted(); // wipes the in-memory DB
+            _context.Dispose();
         }
     }
 }
