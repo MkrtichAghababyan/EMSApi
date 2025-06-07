@@ -1,0 +1,5 @@
+name: Install .NET 9 Preview SDK
+  uses: actions/setup-dotnet@v3
+  with:
+    dotnet-version: '9.0.100-preview.3' # Or the latest available preview
+- run: dotnet --info
