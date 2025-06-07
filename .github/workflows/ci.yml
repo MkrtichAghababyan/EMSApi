@@ -29,4 +29,4 @@ jobs:
       run: dotnet build EMSApi.sln --no-restore --configuration Release
 
     - name: Test
-      run: dotnet test EMSApiTests/EMSApi.Tests.csproj --no-build --verbosity normal
+      run: dotnet test EMSTest/EMS.Test.csproj --no-build --verbosity normal
