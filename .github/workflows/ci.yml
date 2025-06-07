@@ -2,9 +2,9 @@ name: EMS CI (.NET 9 Preview)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-test:
