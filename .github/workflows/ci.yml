@@ -40,11 +40,11 @@ jobs:
 
     # ✅ Run unit tests targeting .NET 9
     - name: Run tests
-      run: dotnet test EMSApiTest/EMSApi.Test.csproj --no-build --configuration Release --verbosity normal --framework net9.0
+      run: dotnet test EMSTest/EMSApi.Test.csproj --no-build --configuration Release --verbosity normal --framework net9.0
 
     # ✅ Generate TRX test report
     - name: Run tests and collect report
-      run: dotnet test EMSApiTest/EMSApi.Test.csproj --logger trx --results-directory TestResults
+      run: dotnet test EMSTest/EMSApi.Test.csproj --logger trx --results-directory TestResults
 
     # ✅ Publish test results to GitHub UI
     - name: Publish test results
