@@ -44,7 +44,7 @@ jobs:
 
     # ✅ Generate TRX test report
     - name: Run tests and collect report
-      run: dotnet test EMSTest/EMSA.Test.csproj --logger trx --results-directory TestResults
+      run: dotnet test EMSTest/EMS.Test.csproj --logger trx --results-directory TestResults
 
     # ✅ Publish test results to GitHub UI
     - name: Publish test results
