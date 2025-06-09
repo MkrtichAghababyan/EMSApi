@@ -32,19 +32,19 @@ jobs:
 
     # ✅ Restore NuGet packages
     - name: Restore dependencies
-      run: dotnet restore EMSAPI2.sln
+      run: dotnet restore EMSApi.sln
 
     # ✅ Build the solution
     - name: Build solution
-      run: dotnet build EMSAPI2.sln --no-restore --configuration Release
+      run: dotnet build EMSApi.sln --no-restore --configuration Release
 
     # ✅ Run unit tests targeting .NET 9
     - name: Run tests
-      run: dotnet test EMSApi.Tests/EMSApi.Tests.csproj --no-build --configuration Release --verbosity normal --framework net9.0
+      run: dotnet test EMSApiTest/EMSApi.Test.csproj --no-build --configuration Release --verbosity normal --framework net9.0
 
     # ✅ Generate TRX test report
     - name: Run tests and collect report
-      run: dotnet test EMSApi.Tests/EMSApi.Tests.csproj --logger trx --results-directory TestResults
+      run: dotnet test EMSApiTest/EMSApi.Test.csproj --logger trx --results-directory TestResults
 
     # ✅ Publish test results to GitHub UI
     - name: Publish test results
